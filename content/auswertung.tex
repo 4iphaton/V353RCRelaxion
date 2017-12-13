@@ -1,0 +1,129 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+
+\subsection{Auf- und Entladevorgang des Kondensators}
+\input{content/tables/messwerte1.tex}
+\begin{figure}[H]
+  \centering
+  \includegraphics{content/images/a/ladekurve.png}
+  \caption{Thermodruck auf und Entladung für eingehende Rechteckspannung.}
+  \label{fig:lade}
+\end{figure}
+mit der Amplitude $U_0=$ \SI{20}{\volt}
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/zeitconst.pdf}
+  \caption{Regressionsplot für den Auf- beziehungsweise Entladevorgang.}
+  \label{fig:lade_plot}
+\end{figure}
+Regressionsgleichung für den Aufladevorgang nach \eqref{eqn:aufladen}
+mit den Werten aus Tabelle \ref{tab:data1}:
+\begin{equation}
+  U(t)=b\left(1-e^{-t/a}\right)
+\end{equation}
+Aufladung:\\
+$RC=a=$ \SI{1.388(30)e-3}{\second}\\
+$b=$ \SI{19.378(108)}{\volt}\\\\
+Regressionsgleichung für den Entladevorgang nach \eqref{eqn:entladen}
+mit den Werten aus Tabelle \ref{tab:data1}:
+\begin{equation}
+  U(t)=b\left(e^{-t/a}\right)
+\end{equation}
+Entladung: \\
+$RC=a=$ \SI{1.369(27)e-3}{\second}\\
+$b=$ \SI{19.514(236)}{\volt}
+
+\subsection{Amplituden in Abhängigkeit der Frequenz}
+\input{content/tables/messwerte2.tex}
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/amplituden.pdf}
+  \caption{Regressionsplot für die Frequenzabhängigkeit der Amplitude.}
+  \label{fig:amp_plot}
+\end{figure}
+
+Regressionsgleichung nach \eqref{eqn:amplitude}
+mit den Werten aus Tabelle \ref{tab:data2}:
+\begin{equation}
+  \frac{A(\omega)}{U_0}=\frac{1}{\sqrt{1+a^2\omega^2}}
+\end{equation}
+$a=$ \pm\SI{1.422(5)e-3}{\second}\\
+$RC=a_+=$ \SI{1.422(5)e-3}{\second}
+
+\subsection{Phasen in Abhängigkeit der Frequenz}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/phasen.pdf}
+  \caption{Regressionsplot für die Frequenzabhängigkeit der Phase.}
+  \label{fig:ph_plot}
+\end{figure}
+
+Regressionsgleichung nach \eqref{eqn:phase}
+mit den Werten aus Tabelle \ref{tab:data2}:
+\begin{equation}
+  \text{sin}(\phi)=\frac{a\omega}{\sqrt{1+a^2\omega^2}}
+\end{equation}
+$RC=a=$ \SI{1.776(34)e-3}{\second}\\
+
+\subsection{Amplituden-Phasen-relation}
+Für die theoretische Kurve wird $RC=$ \SI{1.422(5)e-3}{\second} aus der Bestimmung durch die relativen
+Amplituden $A/U_0$ gewählt:
+\begin{figure}[H]
+  \centering
+  \includegraphics{build/polar.pdf}
+  \caption{Regressionsplot für die Frequenzabhängigkeit der Phase.}
+  \label{fig:pol_plot}
+\end{figure}
+
+
+\subsection{Integrabilität}
+Nach \eqref{eqn:integral} muss die Kondensatorspannung proportional zum
+Integral der Erregerspannung sein. In Abbildung \ref{fig:int_recht}
+ist die Rechteckspannung als Erreger in blau sowie die
+Kondensatorspannung in gelb aufgezeichnet. Bei der Rechteckspannung ist dieser
+Zusammenhang einfach zu erkennen, da die Kondensatorspannung für eine
+positive konstante Erregerspannung linear ansteigt und für eine
+negative konstante Erregerspannung linear abfällt und es gilt:
+\begin{align}
+  x &\propto \int 1 d\, x &\text{beziehungsweise}&& -x &\propto \int -1 d\, x
+\end{align}
+\begin{figure}[H]
+  \centering
+  \includegraphics{content/images/d/rechteck.png}
+  \caption{$U(t)$ in blau und $U_\symup{c}(t)$ in gelb für Rechteckspannung.}
+  \label{fig:int_recht}
+\end{figure}
+In Abbildung \ref{fig:int_sin}
+ist die Sinusspannung als Erreger in blau sowie die
+Kondensatorspannung in gelb aufgezeichnet. Auch hier ist der Zusammenhang
+gut zu sehen, da die Integration des Sinus den negativen Cosinus ergibt
+welcher um \SI{90}{\degree} Phasenverschoben ist:
+\begin{equation}
+  \text{sin}(x-\SI{90}{\degree})=-\text{cos}(x) \propto \int \text{sin}(x)d\, x
+\end{equation}
+\begin{figure}[H]
+  \centering
+  \includegraphics{content/images/d/sinus.png}
+  \caption{$U(t)$ in blau und $U_\symup{c}(t)$ in gelb für Sinusspannung.}
+  \label{fig:int_sin}
+\end{figure}
+In Abbildung \ref{fig:int_drei} ist die Dreiecksspannung
+als Erreger in blau sowie die Kondensatorspannung in gelb aufgezeichnet.
+Hier mag der Graph der Kondensatorspannung irreführender Weise zunächst
+nach einem negativen Cosinus aussehen, bei näherer Betrachtung ist jedoch zu
+erkennen, dass sich der Graph aus den Minima beziehungsweise Maxima
+alternierend negativer und positiver Parabeln zusammensetzt.
+Für die linear steigende Erregerspannung ergibt sich also das Minimum einer
+nach oben geöffneten Parabel, für die linear fallende Erregerspannung
+das Maximum einer nach unten geöffneten Parabel, wodurch die Integrabilität
+auch für diese Erregerspannung gegeben ist:
+\begin{align}
+  x^2 &\propto \int x d\, x &\text{beziehungsweise}&& -x^2 &\propto \int -x d\, x
+\end{align}
+\begin{figure}[H]
+  \centering
+  \includegraphics{content/images/d/dreieck.png}
+  \caption{$U(t)$ in blau und $U_\symup{c}(t)$ in gelb für Dreiecksspannung.}
+  \label{fig:int_drei}
+\end{figure}
