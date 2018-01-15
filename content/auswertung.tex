@@ -9,28 +9,28 @@
   \caption{Thermodruck auf und Entladung für eingehende Rechteckspannung.}
   \label{fig:lade}
 \end{figure}
-mit der Amplitude $U_0=$ \SI{20}{\volt}
+
 \begin{figure}[H]
   \centering
   \includegraphics{build/zeitconst.pdf}
   \caption{Regressionsplot für den Auf- beziehungsweise Entladevorgang.}
   \label{fig:lade_plot}
 \end{figure}
-Regressionsgleichung für den Aufladevorgang nach \eqref{eqn:aufladen}
+Die Regressionsgleichung für den Aufladevorgang nach \eqref{eqn:aufladen} lautet:
 mit den Werten aus Tabelle \ref{tab:data1}:
 \begin{equation}
   U(t)=b\left(1-e^{-t/a}\right)
 \end{equation}
 Aufladung:\\
-$RC=a=$ \SI{1.388(30)e-3}{\second}\\
+$a=RC=$ \SI{1.388(30)e-3}{\second}\\
 $b=$ \SI{19.378(108)}{\volt}\\\\
-Regressionsgleichung für den Entladevorgang nach \eqref{eqn:entladen}
+Die Regressionsgleichung für den Entladevorgang nach \eqref{eqn:entladen} lautet:
 mit den Werten aus Tabelle \ref{tab:data1}:
 \begin{equation}
   U(t)=b\left(e^{-t/a}\right)
 \end{equation}
 Entladung: \\
-$RC=a=$ \SI{1.369(27)e-3}{\second}\\
+$a=RC=$ \SI{1.369(27)e-3}{\second}\\
 $b=$ \SI{19.514(236)}{\volt}
 
 \subsection{Amplituden in Abhängigkeit der Frequenz}
@@ -41,7 +41,8 @@ $b=$ \SI{19.514(236)}{\volt}
   \caption{Regressionsplot für die Frequenzabhängigkeit der Amplitude.}
   \label{fig:amp_plot}
 \end{figure}
-unter beachtung von:
+mit der Amplitude $U_0=$ \SI{20}{\volt}
+unter Beachtung von:
 \begin{equation}
   \omega = 2\pi f
 \end{equation}
@@ -69,7 +70,7 @@ mit den Werten aus Tabelle \ref{tab:data2}:
 \end{equation}
 $RC=a=$ \SI{1.776(34)e-3}{\second}\\
 
-\subsection{Amplituden-Phasen-relation}
+\subsection{Amplituden-Phasen-Relation}
 Für die theoretische Kurve wird $RC=$ \SI{1.422(5)e-3}{\second} aus der Bestimmung durch die relativen
 Amplituden $A/U_0$ gewählt:
 \begin{figure}[H]
@@ -100,8 +101,7 @@ negative konstante Erregerspannung linear abfällt und es gilt:
 In Abbildung \ref{fig:int_sin}
 ist die Sinusspannung als Erreger in blau sowie die
 Kondensatorspannung in gelb aufgezeichnet. Auch hier ist der Zusammenhang
-gut zu sehen, da die Integration des Sinus den negativen Cosinus ergibt
-welcher um \SI{90}{\degree} Phasenverschoben ist:
+gut zu sehen, da die Integration des Sinus den negativen Cosinus ergibt:
 \begin{equation}
   \text{sin}(x-\SI{90}{\degree})=-\text{cos}(x) \propto \int \text{sin}(x)d\, x
 \end{equation}
