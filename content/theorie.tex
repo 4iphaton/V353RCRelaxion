@@ -13,17 +13,11 @@ dieser nach
   \label{eqn:1}
 \end{equation}
 nicht-periodisch in diesen zurück. Dabei beschreibt $A(\infty)$ den Endzustand.
-Wobei die Frequenz durch
-\begin{equation}
-  \omega = 2\pi f
-  \label{eqn:frequenz}
-\end{equation}
-gegeben ist.
 
 \begin{figure}[H]
   \centering
   \includegraphics{content/images/pic1.png}
-  \caption{Auf- und Entladung.}
+  \caption{Schaltung zum Auf- und Entladevorgang des Kondensators.}
   \label{pic:1}
 \end{figure}
 
@@ -54,7 +48,7 @@ erhält man
 \end{equation}
 Die verwendete Formel zur Bestimmung der Spannung ist :
 \begin{equation}
-  U(t)=U_0e^{-t/RC}.
+  U(t)=U(0)\text{exp}\left(\frac{-t}{RC}\right).
   \label{eqn:entladen}
 \end{equation}
 
@@ -65,13 +59,13 @@ der Vorgang durch
   Q(t) = U_0C\, \left(1 - \text{exp}\left(\frac{-t}{RC}\right)\right)
   \label{eqn:6}
 \end{equation}
-beschrieben.
+beschrieben wird.
 \begin{equation}
   \increment T = RC
   \label{eqn:7}
 \end{equation}
 gibt an wie schnell sich der Kondensator entlädt. Nach diesem Zeitraum
-besitzt der Kondensator nach
+besitzt der Kondensator nach der Gleichung
 \begin{equation}
 \frac{Q(RC)}{Q(0)} = \frac{1}{e}
 \label{eqn:8}
@@ -159,11 +153,3 @@ U_\text{C}(t)= \frac{1}{RC} \int_0^t U(\tau) \,\symup{d}\,\tau
 \label{eqn:integral}
 \end{equation}
 umschreiben.
-
-\subsection{Fehlerrechnung}
-Verwendete Fehlerformel ist
-\begin{equation}
-  \text{Abweichung} = \left|\frac{x_\text{theoretisch}-x_\text{praktisch}}{x_\text{theoretisch}}\right|
-  \label{eqn:abweichung}
-\end{equation}
-zur Berechnung der prozentualen Abweichung.
